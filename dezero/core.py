@@ -263,6 +263,9 @@ class Pow(Function):
         gx = c * x ** (c - 1) * gy
         return gx
     
+class Parameter(Variable):
+    pass
+    
 def pow(x, c):
     return Pow(c)(x)
 
@@ -282,3 +285,4 @@ def setup_variable():
     Variable.__truediv__ = div
     Variable.__rtruediv__ = rdiv
     Variable.__pow__ = pow
+    Variable.__getitem__ = dezero.functions.get_item
